@@ -1,7 +1,7 @@
 "use strict";
 var accountBalanceHistory = [
     {
-        monthNumber: 3, // two months ago
+        monthNumber: 3, 
         account: {
             balance: { amount: 600 },
         },
@@ -13,7 +13,7 @@ var accountBalanceHistory = [
         },
     },
     {
-        monthNumber: 4, // two months ago
+        monthNumber: 4, 
         account: {
             balance: { amount: 400 },
         },
