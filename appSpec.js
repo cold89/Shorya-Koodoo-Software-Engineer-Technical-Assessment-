@@ -52,4 +52,30 @@ describe(`App: accountBalanceHistory`, () => {
         accountBalanceHistory.find((d) => d.monthNumber == 3).account.balance.amount = 600;
         expect(app.init(accountBalanceHistory)).toEqual(false);
     });
+    
+      it(`sortDataAsc Success: check if array assigned in ascending order. `, () => {
+        let reqData = [{
+            monthNumber: 1, // two months ago
+            account: {
+                balance: { amount: 2000 },
+            },
+        },{
+            monthNumber: 0, // two months ago
+            account: {
+                balance: { amount: 1000 },
+            },
+        }]
+        const data = app.sortDataAsc(reqData);
+         expect(data).toEqual([{
+            monthNumber: 0, // two months ago
+            account: {
+                balance: { amount: 1000 },
+            },
+        },{
+            monthNumber: 1, // two months ago
+            account: {
+                balance: { amount: 2000 },
+            },
+        }]);
+    });
 });
